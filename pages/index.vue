@@ -32,3 +32,15 @@
         border-radius: 8px;
     }
 </style>
+<script setup>
+useHead({
+
+  title: 'Home | Synapselabs.xyz',
+  meta: [
+    {
+      name: 'description',
+      content: 'Your local, trusted partner for professional tech consulting and support. We specialize in a wide range of services including computer repairs, printer setup and repairs, as well as comprehensive network planning and installation.',
+    },
+  ],
+})
+</script>

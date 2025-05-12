@@ -8,7 +8,8 @@
                 <h1>Synapselabs Tech Solutions</h1>
                 <h5>Tech Done Right</h5>
             </div>
-            <ul class="nav-links">
+            <div class="menu-bar">
+                <ul class="nav-links">
                 <li><NuxtLink  to="/" class="router-link">Home</NuxtLink ></li>
                     
                 <li>
@@ -16,11 +17,9 @@
                 <li>
                     <NuxtLink  to="/reviews" class="router-link">Reviews</NuxtLink ></li>
             </ul>
-            <button class="menu-toggle" @click="toggleMenu">
-                <span :class="{ open: isMenuOpen }">
+            </div>
 
-                </span>
-            </button>
+
         </nav>
     </header>
 </template>
@@ -47,6 +46,7 @@ export default {
     align-items: center;
     margin-left: 1rem;
     color: red;
+    text-align: center;
 }
 img {
     max-width: 100%;
@@ -90,7 +90,10 @@ img {
 .nav-link a:hover {
     color: #636363;
 }
-
+.nav-link a:link{
+    text-decoration: none;
+    color: #ffffff;
+}
 
 .nav-link{
 
@@ -120,34 +123,40 @@ img {
     transform: rotate(45deg);
     background: red;
 }
+a:visited{
+    text-decoration: none;
+    color: #ffffff;
+}
 
 
 html.dark body div#__nuxt.isolate header.header nav.navbar ul.nav-links li a.router-link-active.router-link-exact-active.router-link-active {
-    color: #ffffff;
-    background-color: #0004ffcc;
+    color: #13337A;
+    background-color: #fff;
     border: #333;
-    border-radius: 12px;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 1rem;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background-color: #333;
-        padding: 1rem;
-    }
+.menu-bar .open {
+display: inline;
+}
 
-    .nav-links.active {
+@media screen and (max-width: 768px) {
+    .menu-bar .nav-links{
         display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 75%;
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+    .logo {
+        display: none;
     }
 
-    .menu-toggle {
-        display: block;
-    }
+
+    
 }
+
 </style>
